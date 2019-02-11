@@ -1,2 +1,2 @@
 require 'rails_helper'
-require 'factory_bot'
+require 'factory_bot_rails'

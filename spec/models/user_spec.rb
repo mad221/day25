@@ -1,5 +1,6 @@
 require 'rails_helper'
-require 'factory_bot'
+require 'factory_bot_rails'
+
 
 RSpec.describe User, type: :model do
   before(:each) do
@@ -24,8 +25,8 @@ RSpec.describe User, type: :model do
 
 
   context "associations" do
-    it {expect(@user).to_have_many(:attendances).with_foreign_key(:user_id)}
-    it {expect(@user).to_have_many(:events).with_foreign_key(:user_id)}
+    it {expect(@user).to_have_many(:attendances).with_foreign_key(:user)}
+    it {expect(@user).to_have_many(:events).with_foreign_key(:user)}
 
 
   end
