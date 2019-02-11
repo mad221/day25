@@ -27,7 +27,7 @@ Pour vous faciliter, la tâche voici la marche à suivre pour tester les différ
 $ rails console
 > u1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"homer.simpon@yopmail.com")
 
-A ce stade vous pouvez voir le mail au format html donc votre console.
+A ce stade vous pouvez voir le mail au format html dans votre console.
 
 2) Puis, on créer un nouvel Event avec l'utilisateur que l'on vient de créer.
 
