@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
   has_many :events ,through: :attendances
-  has_many :events 
+  has_many :events, dependent: :destroy
 
 
   after_create :welcome_send
@@ -10,4 +10,5 @@ class User < ApplicationRecord
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
+
 end

@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'factory_bot_rails'
+require 'factory_bot'
 
 
 RSpec.describe User, type: :model do

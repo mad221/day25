@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'factory_bot_rails'
+require 'factory_bot'
 
 RSpec.describe Event, type: :model do
   before(:each) do
@@ -13,6 +13,7 @@ RSpec.describe Event, type: :model do
     it "is valid with valid attributes" do
       expect(@event).to be_a(Event)
     end
+
 
 		end
   end
