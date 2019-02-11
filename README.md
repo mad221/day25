@@ -1,4 +1,10 @@
 # README
+Projet réalisé par :
+----------------------
+- Marion Audren
+- Maxime Pouzol
+- Thomas Le Vot
+----------------------
 
 Welcome to the Eventbrite Project, in this repository you will find all the rails app to run it.
 
