@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Gossip Project, in this repository you will find all the rails app to run it.
 
-Things you may want to cover:
+Please clone this repository and then execute these command lines in your terminal :
 
-* Ruby version
+$ bundle install
 
-* System dependencies
+$ rails db:migrate
 
-* Configuration
 
-* Database creation
+if the terminal said password_digest already exit please, comment the ligne 3 of the migration Add_Password_Digest_To_Users. make the migrate and uncomment the same line.
 
-* Database initialization
+$ rails db:seed
 
-* How to run the test suite
+The Gossip app is now ready !
 
-* Services (job queues, cache servers, search engines, etc.)
+To use it in your browser please enter this last command in your terminal :
 
-* Deployment instructions
 
-* ...
+
+
+Ruby version : 2.5.1
+Rails version : 5.2.2
+
+Attendance.create!(user_id: User.first.id, event_id: Event.first.id)

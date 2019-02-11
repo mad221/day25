@@ -6,7 +6,10 @@ class UserMailer < ApplicationMailer
     @user=user
     @url= 'http://monsite.fr/login'
 
-    mail(to:@user.email,subject: 'Binevenu chez nous ')
+    mail(to:@user.email,subject: 'Bienvenue chez nous ')
   end
+  
+
+
 
 end
