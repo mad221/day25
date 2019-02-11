@@ -31,11 +31,11 @@ A ce stade vous pouvez voir le mail au format html donc votre console.
 
 2) Puis, on créer un nouvel Event avec l'utilisateur que l'on vient de créer.
 
-e1 = Event.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: u1.id)
+> e1 = Event.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: u1.id)
 
 3) Enfin, on créer un nouvel "Attendance" (= participation à un évenement) dans notre console :
 
-Attendance.create!(user_id: u1.id, event_id: Event.last.id)
+> Attendance.create!(user_id: u1.id, event_id: Event.last.id)
 
 Pour vérifier il suffit de vous rendre sur http://www.yopmail.com/ et de chercher le mail envoyé
 
