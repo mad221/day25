@@ -37,7 +37,7 @@
           Mon profil
         </div>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to "Mon profil", user_path, class: "dropdown-item" %>
+          <%= link_to "Mon profil", current_user, class: "dropdown-item" %>
           <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item" %>
         </div>
       </div>
