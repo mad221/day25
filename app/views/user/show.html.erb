@@ -1,2 +1,7 @@
 <h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+
+<h1>Bienvenue sur le profil de: <%= @user.first_name %> <%= @user.last_name %></h1>
+<hr>
+<h4>Description de l'auteur:</h4>
+
+<p><%= @user.description %></p>
