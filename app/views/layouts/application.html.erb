@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Testons</title>
+  <title>Eventbrite</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -23,6 +23,7 @@
           <a class="nav-link" href="#">Évènements</a>
         </li>
       </ul>
+      <% if current_user == nil %>
       <div class="dropdown">
         <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Log
@@ -32,6 +33,7 @@
          <%= link_to "Se connecter", new_user_session_path, class: "dropdown-item" %>
         </div>
       </div>
+      <% else %>
       <div class="nav-item dropdown">
         <div class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Mon profil
@@ -41,7 +43,7 @@
           <%= link_to "Déconnexion", destroy_user_session_path, class: "dropdown-item" %>
         </div>
       </div>
-
+      <% end %>
     </div>
 
   </nav>
