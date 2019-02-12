@@ -9,12 +9,16 @@ class EventController < ApplicationController
   end
 
 
-
   def create
-    @event = Event.create('title' => params[:title],'description' => params[:description],
-     'duration' => params[:duration],'price' => params[:price],
-     'location' => params[:location],'start_date' => params[:start_date],
+
+    @event = Event.create('title' => params[:title],
+      'description' => params[:description],
+     'duration' => params[:duration],
+     'price' => params[:price],
+     'location' => params[:location],
+     'start_date' => params[:start_date],
       'duration' => params[:duration])
+      @event = User.first
       if @event.save # essaie de sauvegarder en base
             # si ça marche, il redirige vers la page d'index du site
             flash[:success] = "Event bien créé !"
@@ -24,10 +28,11 @@ class EventController < ApplicationController
              redirect_to new_event_path
       end
 
+    end
+
 
       def new
       @event = Event.new
       end
 
-end
 end
