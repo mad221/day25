@@ -1,12 +1,9 @@
 <%= form_for @event, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :location %>
-  <%= select_date Date.today, prefix: :start_date %>
-  <%= f.text_field :duration %>
-  <%= f.text_field :price %>
-  <%= f.text_area :description, size: "60x12" %>
+  Titre: <%= f.text_field :title %><br/>
+  Ville: <%= f.text_field :location %><br/>
+  Date: <%= select_date Date.today, prefix: :start_date %><br/>
+Durée: <%= f.text_field :duration %><br/>
+  Prix: <%= f.text_field :price %><br/>
+  Contenu: <%= f.text_area :description, size: "60x12" %><br/>
   <%= f.submit "Create" %>
-  <% if @event.errors.any? %>
-
-<% end %>
 <% end %>
