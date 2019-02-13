@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-before_action :user_match, only: [:show, :edit, :update]
+
+  before_action :user_match, only: [:show, :edit, :update]
   def show
     @user = current_user
   end

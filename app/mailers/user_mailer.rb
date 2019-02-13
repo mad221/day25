@@ -1,14 +1,14 @@
 class UserMailer < ApplicationMailer
 
-  default from: 'maximepouzol@gmail.com'
+  default from: 'no_reply@eventhacker.com'
 
   def welcome_email(user)
     @user=user
-    @url= 'http://monsite.fr/login'
+    @url= 'https://eventbrite-thp7.herokuapp.com/'
 
     mail(to:@user.email,subject: 'Bienvenue chez nous ')
   end
-  
+
 
 
 

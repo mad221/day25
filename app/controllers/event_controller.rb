@@ -1,5 +1,5 @@
 class EventController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
   end
@@ -32,12 +32,25 @@ class EventController < ApplicationController
 
     end
 
-
-      def new
-      @event = Event.new
+      def edit
+        @event = Event.find(params[:id])
       end
 
+      def update
+        @event = Event.find(params[:id])
+        post_params = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location)
+        @event.update(post_params)
+        if @event.update(post_params)
+          redirect_to current_user
+        else
+          render :edit
+        end
+      end
 
+      def destroy
+          @event = Event.find(params[:id])
+          @event.destroy
+          redirect_to event_index_path
 
-
+      end
 end
