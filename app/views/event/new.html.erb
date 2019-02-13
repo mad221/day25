@@ -1,9 +1,49 @@
-<%= form_for @event, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  Titre: <%= f.text_field :title %><br/>
-  Ville: <%= f.text_field :location %><br/>
-  Date: <%= select_date Date.today, prefix: :start_date %><br/>
-Durée: <%= f.text_field :duration %><br/>
-  Prix: <%= f.text_field :price %><br/>
-  Contenu: <%= f.text_area :description, size: "60x12" %><br/>
-  <%= f.submit "Create" %>
-<% end %>
+<html>
+  <body>
+    <div class="container col-md-8 order-md-1">
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div class="form-group">
+        <%= label_tag 'Titre de ton event :' %>
+        <%= text_field_tag 'title', @event.title, class: "form-control", placeholder:"Entre 3 et 14 caractères" %>
+        <br />
+    </div>
+    <div class="form-group">
+        <%= label_tag 'description de ton event :' %>
+        <%= text_field_tag 'description', @event.description, class: "form-control"  %>
+        <br />
+    </div>
+    <div class="form-group">
+        <%= label_tag 'start_date de ton event :' %>
+        <%= text_field_tag 'start_date', @event.start_date, class: "form-control" %>
+        <br />
+    </div>
+    <div class="form-group">
+        <%= label_tag 'duration de ton event :' %>
+        <%= text_field_tag 'duration', @event.duration, class: "form-control" %>
+        <br />
+    </div>
+    <div class="form-group">
+        <%= label_tag 'price de ton event :' %>
+        <%= text_field_tag 'price', @event.price, class: "form-control" %>
+        <br />
+    </div><div class="form-group">
+        <%= label_tag 'location de ton event :' %>
+        <%= text_field_tag 'location', @event.location, class: "form-control" %>
+        <br />
+    </div>
+    <%= submit_tag "Créer ton event", class: "btn btn-primary" %>
+</div>
+
+    <% end %>
+    <br />
+    <% if @event.errors.any? %>
+  <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @event.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  </div>
+  </body>
+</html>
