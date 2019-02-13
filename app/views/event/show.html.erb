@@ -9,7 +9,8 @@
   <% if is_user_the_event_admin? %>
    <p class="h5"> <%= current_user.first_name %> Tu es l'admistrateur de l'évènement </p>
      <%= link_to "Editer mon évenement", edit_event_path(@event.id) , class:"btn btn-primary" %>
-   <% else %>
+  
+  <% else %>
   <%= link_to "Participer à l'évenement", new_event_attendance_path(@event.id) , class:"btn btn-primary" %>
 
   <% end %>
