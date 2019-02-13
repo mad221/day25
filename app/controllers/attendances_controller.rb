@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create]
-before_action :user_already_an_attendee, only: [:edit, :new, :destroy]
+before_action :user_already_an_attendee
 
   def index
     @event = Event.find(params[:event_id])
@@ -52,12 +52,6 @@ before_action :user_already_an_attendee, only: [:edit, :new, :destroy]
      redirect_to new_charge_path
    end
 
-   def user_already_an_attendee
-   @attendance = Event.find(params[:event_id])
-   if current_user.id == @attendance.user.id
-     flash[:danger] = "Vous partipez déja à cet évenement !"
-     redirect_to event_index_path
-   end
- end
+
 
 end

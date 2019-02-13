@@ -8,36 +8,36 @@ Projet réalisé par :
 
 Welcome to the Eventbrite Project, in this repository you will find all the rails app to run it.
 
-Please clone this repository and then execute these command lines in your terminal :
+Here is the link to run the app on Heroku :
+http://eventhacker.herokuapp.com/
+
+Here is the path we can propose you :
+
+First step
+- You can sign up via the "S'inscrire" option on the right dropdown menu.
+- Set the email and password.
+- Then you can edit your profile via "Mon profil".
+- You can participate to an event once on the event page by filling - the form.
+- You can also create an event, just set the price over 100cent.
+- You can log out via the "Déconnexion" option on the right dropdown menu.
+
+Second step
+
+If you want to check all the features, please log in with this mail and password :
+email : nina@nina.com
+password : ninanina
+Then go on the "Super" event, you can edit, delete it and find out who are the attendees.
+
+If you want to clone the repo, here is how you need to proceed :
+
+$ git clone https://github.com/mad221/day25.git
 
 $ bundle install
 
-$ rails db:create
+$ rails db:reset
 
-$ rails db:migrate
+The Eventbrite app is now ready to use in the console if you want!
 
-$ rails db:seed
-
-The Eventbrite app is now ready !
-
-Pour vous faciliter, la tâche voici la marche à suivre pour tester les différents modes d'envoi d'emails :
-
-1)Tout d'abord on créer un nouvel utilisateur avec une adresse yopmail.
-
-$ rails console
-> u1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"homer.simpon@yopmail.com")
-
-A ce stade vous pouvez voir le mail au format html dans votre console.
-
-2) Puis, on créer un nouvel Event avec l'utilisateur que l'on vient de créer.
-
-> e1 = Event.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: u1.id)
-
-3) Enfin, on créer un nouvel "Attendance" (= participation à un évenement) dans notre console :
-
-> Attendance.create!(user_id: u1.id, event_id: Event.last.id)
-
-Pour vérifier il suffit de vous rendre sur http://www.yopmail.com/ et de chercher le mail envoyé
 
 ---------------------
 Ruby version : 2.5.1
