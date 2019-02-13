@@ -19,7 +19,7 @@ class EventController < ApplicationController
      'start_date' => params[:start_date],
       'duration' => params[:duration],
       'user_id' => current_user.id)
-
+      
       if @event.save # essaie de sauvegarder en base
             # si ça marche, il redirige vers la page d'index du site
             flash[:success] = "Event bien créé !"

@@ -9,12 +9,12 @@
     </div>
     <div class="form-group">
         <%= label_tag 'description de ton event :' %>
-        <%= text_field_tag 'description', @event.description, class: "form-control"  %>
+        <%= text_area_tag 'description', @event.description, class: "form-control"  %>
         <br />
     </div>
     <div class="form-group">
         <%= label_tag 'start_date de ton event :' %>
-        <%= text_field_tag 'start_date', @event.start_date, class: "form-control" %>
+        <%= datetime_field_tag 'start_date', @event.start_date, class: "form-control" %>
         <br />
     </div>
     <div class="form-group">
@@ -44,6 +44,6 @@
     <% end %>
   </ul>
   <% end %>
-  
+
   </body>
 </html>
