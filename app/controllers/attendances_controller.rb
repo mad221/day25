@@ -1,7 +1,16 @@
 class AttendancesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create]
 before_action :user_already_an_attendee, only: [:edit, :new, :destroy]
+
   def index
+    @event = Event.find(params[:event_id])
+    @attendance = Attendance.all
+    @attendees = []
+    @attendance.each do |f|
+      if f.event == @event
+        @attendees << f.user.email
+      end
+    end
   end
 
   def new
