@@ -24,7 +24,7 @@ before_action :user_already_an_attendee, only: [:edit, :new, :destroy]
      end
 
      # Amount in cents
-     @amount = @event.price
+
 
      customer = Stripe::Customer.create(
        :email => params[:stripeEmail],
@@ -33,7 +33,7 @@ before_action :user_already_an_attendee, only: [:edit, :new, :destroy]
 
      charge = Stripe::Charge.create(
        :customer    => customer.id,
-       :amount      => @amount,
+       :amount      => @event.price,
        :description => 'Rails Stripe customer',
        :currency    => 'usd'
      )
