@@ -1,2 +1,7 @@
-<h1>Event#show</h1>
-<p>Find me in app/views/event/show.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-4">Voici l'event <%= @event.title %></h1>
+  <p class="lead"> <%= @event.description %> </p>
+  <hr class="my-4">
+  <p>Created by : <%=  %></p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
