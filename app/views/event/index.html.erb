@@ -15,7 +15,7 @@
         <div class="card-columns">
           <% Event.find_each do |event| %>
             <div class="card border-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header bg-transparent border-dark"><a href="/user/<%= event.user.id%>"><%= event.user.first_name %></a> </div>
+            <!--<div class="card-header bg-transparent border-dark"><a href="/user/<%= event.user.id%>"><%= event.user.first_name %></a> </div>-->
             <div class="card-body text-dark"><h5 class="card-title"><%= event.title %></h5></div>
             <div class="card-footer bg-transparent border-dark"><a href="/event/<%= event.id %>">Voir l'évènement</a></div>
             </div>

@@ -20,6 +20,7 @@ class EventController < ApplicationController
       'duration' => params[:duration],
       'user_id' => current_user.id)
 
+
       if @event.save # essaie de sauvegarder en base
             # si ça marche, il redirige vers la page d'index du site
             flash[:success] = "Event bien créé !"
@@ -35,5 +36,8 @@ class EventController < ApplicationController
       def new
       @event = Event.new
       end
+
+
+
 
 end
