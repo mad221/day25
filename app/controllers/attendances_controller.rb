@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create]
-before_action :user_already_an_attendee
+
 
   def index
     @event = Event.find(params[:event_id])
