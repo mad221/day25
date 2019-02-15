@@ -13,7 +13,9 @@ class Event < ApplicationRecord
   has_many :attendances, dependent: :destroy
   has_many :users, through: :attendances
   belongs_to :user, required: true, optional: true
+  has_one_attached :avatar
 
+  before_create :set_default_avatar
 
 private
 
@@ -41,6 +43,11 @@ end
     end
     end
 
+    def set_default_avatar
+      downloaded_image = (open('https://loremflickr.com/g/320/240/paris'))
+      self.avatar.attach(io: downloaded_image, filename: 'image.png')
+
+    end
 
 
 

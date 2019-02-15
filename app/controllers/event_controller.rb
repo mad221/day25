@@ -2,6 +2,7 @@ class EventController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def index
+    @event = Event.all
   end
 
   def show
@@ -25,16 +26,18 @@ class EventController < ApplicationController
       'user_id' => current_user.id)
 
 
+
       if @event.save # essaie de sauvegarder en base
             # si ça marche, il redirige vers la page d'index du site
             flash[:success] = "Event bien créé !"
+            @event = Event.last
+         @event.avatar.attach(params[:avatar])
             redirect_to event_index_path
            else
             # sinon, il render la view new (qui est celle sur laquelle on est déjà)
              render new_event_path
-      end
-
-    end
+           end
+        end
 
       def edit
         @event = Event.find(params[:id])
@@ -42,7 +45,7 @@ class EventController < ApplicationController
 
       def update
         @event = Event.find(params[:id])
-        post_params = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location)
+        post_params = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location, :avatar)
         @event.update(post_params)
         if @event.update(post_params)
           redirect_to current_user

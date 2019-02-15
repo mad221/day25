@@ -1,5 +1,7 @@
 <div class="jumbotron">
-  <h1 class="display-4">Voici l'event <%= @event.title %></h1>
+
+<h1 class="display-4" align="center"> Voici l'event: <%= @event.title %><br/> <%=  if @event.avatar.attached? ==true
+   image_tag @event.avatar, width: 300, alt: 'avatar' end  %> </h1>
   <p class="lead"> <%= @event.description %> </p>
   <hr class="my-4">
   <p>Créateur : <%= @event.user.try(:email)%></p>
@@ -7,7 +9,8 @@
   <p>Date : <%= @event.start_date %></p>
   <p>Prix : <%= @event.price %></p>
 
-  <% if is_user_the_event_admin? %>
+
+  <% if is_user_the_event_creator? %>
    <p class="h5"> <%= current_user.first_name %> tu es l'admistrateur de l'évènement </p>
      <%= link_to "Editer mon évenement", edit_event_path(@event.id) , class:"btn btn-primary" %>
      <%= link_to "Voir les invités", event_attendances_path(@event.id) , class:"btn btn-primary" %>

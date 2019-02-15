@@ -1,8 +1,8 @@
 <html>
   <body>
     <div class="container col-md-8 order-md-1">
-    <%= form_tag url_for(action: 'create'), method: "post" do %>
-    
+    <%= form_tag url_for(action: 'create'),multipart: true, method: "post" do %>
+
     <div class="form-group">
         <%= label_tag 'Titre de ton évènement :' %>
         <%= text_field_tag 'title', @event.title, class: "form-control", placeholder:"Entre 3 et 14 caractères" %>
@@ -31,6 +31,12 @@
         <%= label_tag 'Lieu de ton évènement :' %>
         <%= text_field_tag 'location', @event.location, class: "form-control" %>
         <br />
+
+        <h3>Changer d'avatar ?</h3>
+
+  <%= file_field_tag :avatar %>
+
+
     </div>
     <%= submit_tag "Créer ton event", class: "btn btn-primary" %>
 </div>

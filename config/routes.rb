@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :users
+    resources :attendances
+    resources :events
+    root to: "admin#index"
+  end
+
   root 'event#index'
   devise_for :users
   resources :attendances, only: [:index, :new, :create]
