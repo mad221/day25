@@ -1,6 +1,5 @@
 class EventController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-
   def index
     @event = Event.all
   end
@@ -53,11 +52,9 @@ class EventController < ApplicationController
           render :edit
         end
       end
-
       def destroy
           @event = Event.find(params[:id])
           @event.destroy
           redirect_to event_index_path
-
       end
 end

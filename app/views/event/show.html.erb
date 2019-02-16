@@ -1,5 +1,5 @@
+<% if @event.validated == true %>
 <div class="jumbotron">
-
 <h1 class="display-4" align="center"> Voici l'event: <%= @event.title %><br/> <%=  if @event.avatar.attached? ==true
    image_tag @event.avatar, width: 300, alt: 'avatar' end  %> </h1>
   <p class="lead"> <%= @event.description %> </p>
@@ -19,3 +19,6 @@
   <%= link_to "Participer à l'évenement", new_event_attendance_path(@event.id) , class:"btn btn-primary" %>
   <% end %>
 </div>
+<% else %>
+<h1> L'Event n'est pas encore validé par l'administrateur, merci de patienter</h1>
+<% end %>

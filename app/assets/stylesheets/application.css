@@ -14,13 +14,14 @@
  *= require_self
  */
 .container-fluid {
-  background-color: #e5e5e5;
   width: auto;
   text-align: center;
+  margin-top: 50px;
 }
 .jumbotron {
-  background-color: #efefef;
+  background-color: #bcbcbcbc;
+  text-align: center;
 }
-.html {
-  background-color: #efefef
+body {
+  background-color: #efefef;
 }

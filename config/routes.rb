@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     resources :user
     resources :attendances
     resources :event
+    resources :event_submissions
     root to: "admin#index"
   end
 

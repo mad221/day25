@@ -1,0 +1,11 @@
+<div class="jumbotron">
+<h1 class="display-4" align="center"> Voici l'event: <%= @event.title %><br/> <%=  if @event.avatar.attached? ==true
+   image_tag @event.avatar, width: 300, alt: 'avatar' end %> </h1>
+  <p class="lead"> <%= @event.description %> </p>
+  <hr class="my-4">
+  <p>Créateur : <%= @event.user.try(:email)%></p>
+  <p>Lieu : <%= @event.location %></p>
+  <p>Date : <%= @event.start_date %></p>
+  <p>Prix : <%= @event.price %></p>
+  <%= link_to "Modifier", edit_admin_event_submission_path(@event.id) %>
+</div>
