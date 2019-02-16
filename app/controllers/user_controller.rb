@@ -19,6 +19,11 @@ class UserController < ApplicationController
       render :edit
     end
   end
+  def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      redirect_to admin_user_path
+  end
   private
   def user_match
     @user = current_user

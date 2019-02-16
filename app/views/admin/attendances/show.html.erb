@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">@</th>
+      <th scope="col">User_ID</th>
+      <th scope="col">Event_ID</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Update at</th>
+    </tr>
+  </thead>
+  <% @attendances.each do |attendance| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= attendance.id %></th>
+      <td><%= attendance.user_id %></td>
+      <td><%= attendance.title%></td>
+      <td><%= attendance.created_at %></td>
+      <td><%= attendance.updated_at %></td>
+
+    </tr>
+  </tbody>
+  <% end %>
+</table>

@@ -17,7 +17,7 @@ end
 
 7.times do
 
-events = Event.create!( title: Faker::Lorem.characters(6), description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: (rand(User.first.id..User.last.id)))
+events = Event.create!( title: Faker::Hacker.ingverb, description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: (rand(User.first.id..User.last.id)))
 end
 
 5.times do
