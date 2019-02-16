@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
+    resources :user
     resources :attendances
-    resources :events
+    resources :event
     root to: "admin#index"
   end
 
@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   resources :attendances, only: [:index, :new, :create]
   resources :user, only: [:show, :edit, :update]
   resources :event do
-    resources :attendances, only: [:new, :index, :show, :create, :destroy]
+  resources :attendances, only: [:new, :index, :show, :create, :destroy]
   end
   resources :charges
 end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

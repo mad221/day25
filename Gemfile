@@ -21,6 +21,7 @@ gem 'faker'
 gem 'table_print'
 gem 'devise'
 gem 'stripe'
+gem 'bootstrap-sass'
 
 
 # Use CoffeeScript for .coffee assets and views

@@ -1,0 +1,27 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Durée</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <% @event.each do |event| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= event.id %></th>
+      <td><%= event.title %></td>
+      <td><%= event.title %></td>
+      <td><%= event.start_date %></td>
+      <td><%= event.price %>$</td>
+      <td><%= event.duration %></td>
+      <td><%= event.location %></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
