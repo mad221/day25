@@ -12,16 +12,17 @@
     <hr>
     </div>
         <div class="card-columns">
-          <% @event.each do |event| %>
-
+          <% @event.each do |event|%>
+            <% if event.validated == true %>
             <div class="card border-dark mb-3" style="max-width: 18rem;">
 
-            <div class="card-body text-dark"><h5 class="card-title"><%= event.title %></h5></div>
+            <div class="card-body text-dark border-dark"><h5 class="card-title"><%= event.title %></h5></div>
             <% if event.avatar.attached? ==true %>
             <div class="card-body text-dark"><h5 class="card-title"><%= image_tag  event.avatar, width: 170, alt: 'avatar' %></h5></div>
               <% end %>
             <div class="card-footer bg-transparent border-dark"><a href="/event/<%= event.id %>">Voir l'évènement</a></div>
             </div>
+            <% end %>
           <% end %>
         </div>
   </body>

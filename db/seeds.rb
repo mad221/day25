@@ -15,9 +15,9 @@ Attendance.destroy_all
   user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, description: Faker::Lorem.paragraph(20), password: Faker::Space.agency)
 end
 
-7.times do
+9.times do
 
-events = Event.create!( title: Faker::Hacker.ingverb, description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: (rand(User.first.id..User.last.id)))
+events = Event.create!( title: Faker::Hacker.ingverb, description: Faker::ChuckNorris.fact, start_date: Time.now+3.day, duration: rand(1..10)*5, location: Faker::Address.city, price: rand(1..1000), user_id: (rand(User.first.id..User.last.id)), validated: true)
 end
 
 5.times do
