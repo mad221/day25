@@ -7,20 +7,19 @@
   <p>Lieu : <%= @event.location %></p>
   <p>Date : <%= @event.start_date %></p>
   <p>Prix : <%= @event.price %></p>
-  <p>Valider ? :</p>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline1">Oui</label>
-  </div>
-  <div class="custom-control custom-radio custom-control-inline">
-    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-    <label class="custom-control-label" for="customRadioInline2">Non</label>
-  </div>
-  <br />
-  <br />
-  <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+  <div class="row" style="margin-top: 5vh">
+    	<div class="col-6 text-right">
+    		 <%= form_tag url_for(action: 'update'), method: "put" do %>
+    		 <%= hidden_field_tag 'decision' , 'true' %>
+    		 <%= submit_tag "Accept the event submission", :class => "btn btn-outline-success" %>
+    		 <% end %>
+    	</div>
+    	<div class="col-6 text-left">
+    		<%= form_tag url_for(action: 'update'), method: "put" do %>
+    		 <%= hidden_field_tag 'decision' , 'false' %>
+    		 <%= submit_tag "Refuse the event submission", :class => "btn btn-outline-danger" %>
+    		 <% end %>
+    	</div>
+    </div>
 </div>
-<center>
-
-
-</center>

@@ -44,7 +44,7 @@ class EventController < ApplicationController
 
       def update
         @event = Event.find(params[:id])
-        post_params = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location, :avatar)
+        post_params = params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location, :avatar, :validated)
         @event.update(post_params)
         if @event.update(post_params)
           redirect_to current_user

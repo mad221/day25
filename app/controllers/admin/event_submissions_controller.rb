@@ -12,5 +12,8 @@ class Admin::EventSubmissionsController < ApplicationController
   end
 
   def update
+      @event = Event.find(params[:id])
+      @event.update_attribute(:validated, params[:decision])
+      redirect_to admin_event_submission_path
   end
 end
